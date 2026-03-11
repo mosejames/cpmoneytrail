@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CP Money Trail — Where Did $847,293 Go?</title>
+
+  <!-- OG Meta Tags -->
+  <meta property="og:title" content="CP Money Trail — Where Did $847,293 Go?">
+  <meta property="og:description" content="The City of College Park paid one law firm $847,293 in 18 months. Crisis PR, lobbying, and consulting hidden in legal invoices. See the receipts.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cpmoneytrail.com">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================
+       CP MONEY TRAIL — DESIGN SYSTEM
+       ============================================ */
+
+    /* --- CSS Custom Properties --- */
+    :root {
+      --bg: #0a0a0a;
+      --card-bg: #141414;
+      --card-border: #1f1f1f;
+      --red: #e63946;
+      --red-dark: #b82d38;
+      --text: #e0e0e0;
+      --text-dim: #888;
+      --white: #ffffff;
+      --redact-bg: #1a1a1a;
+    }
+
+    /* --- Reset --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* --- Links --- */
+    a {
+      color: var(--red);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: var(--red-dark);
+    }
+
+    /* --- Utility Classes --- */
+    .section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 16px;
+    }
+
+    .section-headline {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 12px;
+      line-height: 1.15;
+    }
+
+    .section-subhead {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--text-dim);
+      margin-bottom: 48px;
+      line-height: 1.6;
+      max-width: 700px;
+    }
+
+    .red {
+      color: var(--red);
+    }
+
+    .amount {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      color: var(--red);
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 32px;
+      margin-bottom: 16px;
+    }
+
+    .callout {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-left: 3px solid var(--red);
+      font-style: italic;
+      padding: 24px 32px;
+      margin-bottom: 16px;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--red);
+      opacity: 0.4;
+      margin: 0;
+    }
+
+    /* --- Redaction Decoration --- */
+    .redacted-bg {
+      position: relative;
+    }
+
+    .redacted-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 3px,
+        rgba(0, 0, 0, 0.04) 3px,
+        rgba(0, 0, 0, 0.04) 5px,
+        transparent 5px,
+        transparent 18px
+      );
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ============================================
+       HERO SECTION
+       ============================================ */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Redacted document texture for hero background */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 4px,
+        rgba(255, 255, 255, 0.015) 4px,
+        rgba(255, 255, 255, 0.015) 5px,
+        transparent 5px,
+        transparent 22px
+      );
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Subtle radial glow behind the amount */
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -60%);
+      width: 600px;
+      height: 400px;
+      background: radial-gradient(ellipse, rgba(230, 57, 70, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-inner {
+      max-width: 800px;
+      text-align: center;
+      padding: 40px 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 32px;
+    }
+
+    .hero-amount {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(4rem, 12vw, 8rem);
+      font-weight: 700;
+      color: var(--red);
+      line-height: 1;
+      margin-bottom: 24px;
+      text-shadow: 0 0 80px rgba(230, 57, 70, 0.3);
+    }
+
+    .hero-headline {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.4rem, 3.5vw, 2rem);
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+
+    .hero-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: var(--text-dim);
+      line-height: 1.7;
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+
+    .hero-cta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      opacity: 0.6;
+      animation: hero-bob 2.4s ease-in-out infinite;
+    }
+
+    @keyframes hero-bob {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(8px);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================
+       HERO
+       ============================================ -->
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-label">CP MONEY TRAIL // INVESTIGATION #1</div>
+      <h1 class="hero-amount">$847,293</h1>
+      <p class="hero-headline">Where Did $847,293 of Your Money Go?</p>
+      <p class="hero-sub">The City of College Park paid one law firm $847,293.93 in 18 months. Crisis PR, lobbying, and strategy consulting were billed as "legal services." Descriptions were redacted. Rates jumped 52%. Here's what the invoices show.</p>
+      <div class="hero-cta">Scroll to see the receipts &#x25BE;</div>
+    </div>
+  </header>
+
+  <!-- ============================================
+       CONTENT SECTIONS (placeholders for later tasks)
+       ============================================ -->
+
+  <div class="divider"></div>
+  <section id="growth" class="section"></section>
+
+  <div class="divider"></div>
+  <section id="invoices" class="section"></section>
+
+  <div class="divider"></div>
+  <section id="not-legal" class="section"></section>
+
+  <div class="divider"></div>
+  <section id="rate-raise" class="section"></section>
+
+  <div class="divider"></div>
+  <section id="redacted" class="section"></section>
+
+  <div class="divider"></div>
+  <section id="meetings" class="section"></section>
+
+  <div class="divider"></div>
+  <section id="internal" class="section"></section>
+
+  <div class="divider"></div>
+  <section id="blank-checks" class="section"></section>
+
+  <div class="divider"></div>
+  <section id="questions" class="section"></section>
+
+  <div class="divider"></div>
+  <section id="receipts" class="section"></section>
+
+  <!-- ============================================
+       SCRIPTS
+       ============================================ -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+  <script src="data.js"></script>
+
+</body>
+</html>
