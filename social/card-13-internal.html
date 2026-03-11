@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1200">
+  <title>CP Money Trail — Your Money, Their Fights</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1200px; height: 630px; overflow: hidden;
+      background: #0a0a0a; font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased; position: relative;
+    }
+    body::before {
+      content: ''; position: absolute; inset: 0;
+      background: repeating-linear-gradient(to bottom, transparent, transparent 3px, rgba(255,255,255,0.015) 3px, rgba(255,255,255,0.015) 4px);
+      pointer-events: none; z-index: 0;
+    }
+    .brand {
+      position: absolute; top: 40px; left: 48px;
+      font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 500;
+      letter-spacing: 0.2em; text-transform: uppercase; color: #e63946; z-index: 2;
+    }
+    .url {
+      position: absolute; bottom: 40px; right: 48px;
+      font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #888; z-index: 2;
+    }
+    .content {
+      position: relative; z-index: 1; width: 100%; height: 100%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 0 80px;
+    }
+    .stat {
+      font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+      color: #ffffff; font-size: 52px; line-height: 1.15; margin-bottom: 28px;
+      text-align: center; max-width: 900px;
+    }
+    .context {
+      font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 400;
+      color: #888; max-width: 700px; text-align: center; line-height: 1.5;
+    }
+    .secondary {
+      font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 400;
+      color: #888; max-width: 700px; text-align: center; line-height: 1.5; margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="brand">CP MONEY TRAIL</div>
+  <div class="url">cpmoneytrail.com</div>
+  <div class="content">
+    <div class="stat">YOUR MONEY IS FUNDING THEIR FIGHTS.</div>
+    <div class="context">Terminations. Grievances. Ethics complaints. Lawsuits between officials.</div>
+    <div class="secondary">All billed to College Park taxpayers.</div>
+  </div>
+</body>
+</html>

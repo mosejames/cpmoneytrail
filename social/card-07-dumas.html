@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1200">
+  <title>CP Money Trail — Dumas Personnel Matter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1200px; height: 630px; overflow: hidden;
+      background: #0a0a0a; font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased; position: relative;
+    }
+    body::before {
+      content: ''; position: absolute; inset: 0;
+      background: repeating-linear-gradient(to bottom, transparent, transparent 3px, rgba(255,255,255,0.015) 3px, rgba(255,255,255,0.015) 4px);
+      pointer-events: none; z-index: 0;
+    }
+    .glow {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -60%);
+      width: 500px; height: 300px;
+      background: radial-gradient(ellipse, rgba(230,57,70,0.12) 0%, transparent 70%);
+      pointer-events: none; z-index: 0;
+    }
+    .brand {
+      position: absolute; top: 40px; left: 48px;
+      font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 500;
+      letter-spacing: 0.2em; text-transform: uppercase; color: #e63946; z-index: 2;
+    }
+    .url {
+      position: absolute; bottom: 40px; right: 48px;
+      font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #888; z-index: 2;
+    }
+    .content {
+      position: relative; z-index: 1; width: 100%; height: 100%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+    }
+    .stat {
+      font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+      color: #e63946; font-size: 120px; line-height: 1; margin-bottom: 24px;
+    }
+    .context {
+      font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 400;
+      color: #e0e0e0; max-width: 700px; text-align: center; line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="glow"></div>
+  <div class="brand">CP MONEY TRAIL</div>
+  <div class="url">cpmoneytrail.com</div>
+  <div class="content">
+    <div class="stat">$10,146</div>
+    <div class="context">One personnel matter. One month. Fully redacted.</div>
+  </div>
+</body>
+</html>
