@@ -1,0 +1,1461 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>They Sold the Park. — The Bill Evans Field Story</title>
+<meta name="description" content="A 6.5-acre public park in College Park. An executive session. A quitclaim to BIDA. A sale to Creed Acquisitions for $1.5 million. And, last night, another acre — for $101,000. Every claim sourced to public council minutes." />
+<meta property="og:title" content="They Sold the Park. — The Bill Evans Field Story" />
+<meta property="og:description" content="A public park, dedicated to youth baseball. Sold for $0.96 a square foot. The full timeline." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Manrope:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --ink: #050807;
+    --ink-2: #0c1310;
+    --night: #11201a;
+    --bone: #f5f1e6;
+    --paper: #ede6d3;
+    --grass: #2d6e3f;
+    --grass-dk: #1a4628;
+    --chalk: #ffffff;
+    --dirt: #8b5e3c;
+    --oxblood: #7a1f1f;
+    --brick: #b54040;
+    --gold: #d4a857;
+    --muted: rgba(245,241,230,0.62);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { background: var(--ink); scroll-behavior: smooth; }
+  body { font-family: Inter, system-ui, sans-serif; color: var(--bone); background: var(--ink); line-height: 1.5; }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; }
+
+  .display { font-family: "Archivo Black", sans-serif; letter-spacing: -0.02em; line-height: 0.92; }
+  .serif { font-family: "DM Serif Display", Georgia, serif; }
+  .bold { font-family: Manrope, sans-serif; font-weight: 800; }
+  .mono { font-family: ui-monospace, "JetBrains Mono", monospace; }
+
+  .wrap { width: min(1200px, calc(100% - 40px)); margin: 0 auto; }
+  .narrow { width: min(780px, calc(100% - 40px)); margin: 0 auto; }
+
+  /* ============ STICKY MINIMAL NAV ============ */
+  nav.top {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+    background: rgba(5,8,7,0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(245,241,230,0.1);
+  }
+  nav.top .row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 14px 20px;
+    width: min(1200px, calc(100% - 40px));
+    margin: 0 auto;
+  }
+  nav.top .brand {
+    font-family: "Archivo Black";
+    font-size: 13px; color: var(--gold);
+    letter-spacing: 0.18em; text-transform: uppercase;
+  }
+  nav.top .meta {
+    font-family: Manrope; font-weight: 800; font-size: 10px;
+    color: var(--muted); text-transform: uppercase; letter-spacing: 0.2em;
+  }
+
+  /* ============ HERO ============ */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    padding: 130px 0 80px;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(45,110,63,0.18) 0%, transparent 55%),
+      radial-gradient(circle at 80% 80%, rgba(122,31,31,0.14) 0%, transparent 55%),
+      var(--ink);
+    display: flex; flex-direction: column; justify-content: center;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(245,241,230,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(245,241,230,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+  .hero-content { position: relative; z-index: 2; }
+
+  .breaking {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--brick); color: var(--bone);
+    padding: 8px 16px; border-radius: 3px;
+    font-family: Manrope; font-weight: 900;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em;
+    margin-bottom: 28px;
+    animation: pulse 2s infinite;
+  }
+  .breaking::before {
+    content: "●"; color: var(--bone);
+    font-size: 14px;
+  }
+  @keyframes pulse {
+    0%,100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+
+  h1.title {
+    font-family: "Archivo Black";
+    font-size: clamp(3.4rem, 11vw, 9rem);
+    line-height: 0.88;
+    color: var(--bone);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+  }
+  h1.title .accent { color: var(--grass); }
+  h1.title .blood { color: var(--brick); }
+
+  .lead {
+    font-family: "DM Serif Display"; font-style: italic;
+    font-size: clamp(1.25rem, 2.2vw, 1.85rem);
+    color: var(--bone);
+    line-height: 1.35;
+    max-width: 880px;
+    margin-bottom: 36px;
+  }
+
+  .lead-pill-row {
+    display: flex; flex-wrap: wrap; gap: 14px;
+    margin-bottom: 36px;
+  }
+  .lead-pill {
+    background: rgba(245,241,230,0.06);
+    border: 1px solid rgba(245,241,230,0.18);
+    padding: 10px 16px;
+    font-family: Manrope; font-weight: 800;
+    font-size: 12px; text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+  .lead-pill strong { color: var(--gold); }
+  .lead-pill.grass strong { color: var(--grass); }
+  .lead-pill.blood strong { color: var(--brick); }
+
+  .scroll-cue {
+    margin-top: 60px;
+    font-family: Manrope; font-weight: 800;
+    font-size: 11px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.24em;
+  }
+  .scroll-cue::after {
+    content: " ↓"; color: var(--gold);
+  }
+
+  /* ============ SECTION SHELL ============ */
+  section.chap {
+    padding: 100px 0 80px;
+    border-top: 1px solid rgba(245,241,230,0.08);
+    position: relative;
+  }
+  section.chap.dark { background: var(--ink-2); }
+  section.chap.deep { background: var(--night); }
+  section.chap.blood { background: rgba(122,31,31,0.08); }
+  section.chap.grass-bg { background: rgba(45,110,63,0.07); }
+
+  .chap-num {
+    font-family: "Archivo Black";
+    font-size: 11px; color: var(--gold);
+    text-transform: uppercase; letter-spacing: 0.32em;
+    margin-bottom: 20px;
+  }
+  .chap-headline {
+    font-family: "Archivo Black";
+    font-size: clamp(2.4rem, 6vw, 4.5rem);
+    line-height: 0.95;
+    color: var(--bone);
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    margin-bottom: 28px;
+  }
+  .chap-headline .alt { color: var(--grass); }
+  .chap-headline .blood-text { color: var(--brick); }
+
+  .chap-body p {
+    font-family: Inter; font-weight: 500;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: rgba(245,241,230,0.88);
+    margin-bottom: 1.3em;
+  }
+  .chap-body p:last-child { margin-bottom: 0; }
+  .chap-body p strong {
+    color: var(--bone); font-weight: 800;
+  }
+  .chap-body p .gold { color: var(--gold); font-weight: 800; }
+
+  /* ============ PULL QUOTES ============ */
+  .pullquote {
+    margin: 56px auto;
+    max-width: 900px;
+    padding: 0 30px;
+    border-left: 6px solid var(--gold);
+    position: relative;
+  }
+  .pullquote .mark {
+    font-family: "DM Serif Display";
+    font-size: 88px; color: var(--gold);
+    line-height: 0.5; margin-bottom: 14px;
+  }
+  .pullquote .text {
+    font-family: "DM Serif Display"; font-style: italic;
+    font-size: clamp(1.4rem, 3vw, 2.3rem);
+    line-height: 1.25; color: var(--bone);
+  }
+  .pullquote .attr {
+    margin-top: 18px;
+    font-family: Manrope; font-weight: 800;
+    font-size: 12px; text-transform: uppercase;
+    letter-spacing: 0.18em; color: var(--gold);
+  }
+  .pullquote.blood { border-left-color: var(--brick); }
+  .pullquote.blood .mark { color: var(--brick); }
+  .pullquote.blood .attr { color: var(--brick); }
+  .pullquote.grass { border-left-color: var(--grass); }
+  .pullquote.grass .mark { color: var(--grass); }
+  .pullquote.grass .attr { color: var(--grass); }
+
+  /* ============ TIMELINE ============ */
+  .timeline {
+    position: relative;
+    padding-left: 70px;
+    margin: 50px 0;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 24px; top: 8px; bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--gold) 0%, var(--gold) 80%, transparent 100%);
+  }
+  .tl-event { margin-bottom: 48px; position: relative; }
+  .tl-event:last-child { margin-bottom: 0; }
+  .tl-event::before {
+    content: "";
+    position: absolute;
+    left: -54px; top: 6px;
+    width: 14px; height: 14px;
+    background: var(--gold);
+    border: 3px solid var(--ink);
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px var(--gold);
+    z-index: 2;
+  }
+  .tl-event.blood::before { background: var(--brick); box-shadow: 0 0 0 2px var(--brick); }
+  .tl-event.grass::before { background: var(--grass); box-shadow: 0 0 0 2px var(--grass); }
+  .tl-event.huge::before {
+    width: 22px; height: 22px; left: -58px; top: 0;
+  }
+
+  .tl-date {
+    font-family: Manrope; font-weight: 900;
+    font-size: 13px; color: var(--gold);
+    text-transform: uppercase; letter-spacing: 0.16em;
+    margin-bottom: 6px;
+  }
+  .tl-event.blood .tl-date { color: var(--brick); }
+  .tl-event.grass .tl-date { color: var(--grass); }
+  .tl-title {
+    font-family: "Archivo Black";
+    font-size: 1.6rem; line-height: 1.1;
+    color: var(--bone);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .tl-event.huge .tl-title { font-size: 2.2rem; }
+  .tl-meta {
+    font-family: Inter; font-weight: 500;
+    font-size: 1rem; line-height: 1.55;
+    color: rgba(245,241,230,0.82);
+  }
+  .tl-meta strong { color: var(--bone); font-weight: 800; }
+  .tl-tag {
+    display: inline-block;
+    background: rgba(212,168,87,0.12);
+    color: var(--gold);
+    padding: 3px 10px;
+    border: 1px solid rgba(212,168,87,0.4);
+    font-family: Manrope; font-weight: 800;
+    font-size: 10px; text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin-top: 12px; margin-right: 6px;
+  }
+  .tl-tag.blood {
+    background: rgba(180,64,64,0.14); color: #ffaaaa;
+    border-color: rgba(180,64,64,0.45);
+  }
+  .tl-tag.grass {
+    background: rgba(45,110,63,0.14); color: #6ed091;
+    border-color: rgba(45,110,63,0.45);
+  }
+
+  /* ============ THE MATH ============ */
+  .math-stack {
+    background: var(--ink-2);
+    border: 2px solid var(--gold);
+    padding: 36px;
+    margin: 40px 0;
+  }
+  .math-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+    align-items: baseline;
+    padding: 18px 0;
+    border-bottom: 1px dashed rgba(245,241,230,0.18);
+  }
+  .math-row:last-child { border-bottom: none; }
+  .math-row.total {
+    border-top: 3px solid var(--gold);
+    border-bottom: none;
+    padding-top: 22px;
+    margin-top: 8px;
+  }
+  .math-label {
+    font-family: Manrope; font-weight: 700;
+    font-size: 14px; color: var(--bone);
+    line-height: 1.4;
+  }
+  .math-label .sub {
+    display: block;
+    font-family: Inter; font-weight: 500;
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  .math-value {
+    font-family: "Archivo Black";
+    font-size: 1.8rem;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+  .math-value.huge { font-size: 2.6rem; color: var(--brick); }
+
+  /* ============ MISSING-FROM-RECORD GRID ============ */
+  .missing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
+    margin: 30px 0;
+  }
+  .missing-item {
+    background: rgba(122,31,31,0.10);
+    border: 1px dashed rgba(180,64,64,0.45);
+    padding: 20px;
+    color: var(--bone);
+  }
+  .missing-item .x {
+    font-family: "Archivo Black";
+    color: var(--brick);
+    font-size: 28px; line-height: 1;
+    margin-bottom: 10px;
+  }
+  .missing-item .label {
+    font-family: Manrope; font-weight: 800;
+    font-size: 13px;
+    color: var(--bone);
+    margin-bottom: 6px;
+  }
+  .missing-item .note {
+    font-family: Inter; font-weight: 500;
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* ============ ACTION SECTION ============ */
+  .action-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin: 40px 0;
+  }
+  .action-card {
+    background: var(--ink);
+    border: 2px solid var(--gold);
+    padding: 24px;
+  }
+  .action-card h3 {
+    font-family: "Archivo Black";
+    font-size: 18px; color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .action-card p {
+    font-family: Inter; font-size: 14px;
+    color: var(--bone); line-height: 1.55;
+  }
+  .action-card .script {
+    font-family: "DM Serif Display"; font-style: italic;
+    font-size: 15px; line-height: 1.45;
+    color: var(--bone);
+    background: rgba(245,241,230,0.05);
+    padding: 14px 16px;
+    border-left: 3px solid var(--gold);
+    margin-top: 14px;
+  }
+
+  /* ============ THE PARCEL HERO IMAGE ============ */
+  .parcel-visual {
+    aspect-ratio: 5/3;
+    background:
+      linear-gradient(135deg, var(--grass-dk) 0%, var(--grass) 50%, var(--grass-dk) 100%);
+    border: 4px solid var(--bone);
+    position: relative;
+    margin: 40px 0;
+    overflow: hidden;
+  }
+  .parcel-visual::before {
+    content: "";
+    position: absolute;
+    inset: 10px;
+    background:
+      radial-gradient(circle at 30% 70%, rgba(255,255,255,0.08) 0%, transparent 20%),
+      radial-gradient(circle at 70% 30%, rgba(255,255,255,0.05) 0%, transparent 25%);
+  }
+  .parcel-visual .diamond {
+    position: absolute;
+    left: 50%; bottom: 28%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 35%; aspect-ratio: 1;
+    border: 4px solid rgba(255,255,255,0.55);
+  }
+  .parcel-visual .diamond::before, .parcel-visual .diamond::after {
+    content: "";
+    position: absolute;
+    width: 18px; height: 18px;
+    background: var(--bone);
+    border-radius: 4px;
+  }
+  .parcel-visual .diamond::before { top: -9px; left: -9px; }
+  .parcel-visual .diamond::after { bottom: -9px; right: -9px; }
+  .parcel-visual .label {
+    position: absolute;
+    top: 26px; left: 26px;
+    background: var(--bone); color: var(--ink);
+    padding: 8px 14px;
+    font-family: "Archivo Black";
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .parcel-visual .acres {
+    position: absolute;
+    top: 24px; right: 28px;
+    text-align: right;
+    color: var(--bone);
+  }
+  .parcel-visual .acres .num {
+    font-family: "Archivo Black";
+    font-size: 64px; line-height: 1;
+    color: var(--bone);
+  }
+  .parcel-visual .acres .unit {
+    font-family: Manrope; font-weight: 900;
+    font-size: 12px;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+  .parcel-visual .caption {
+    position: absolute;
+    bottom: 18px; left: 26px; right: 26px;
+    font-family: Manrope; font-weight: 800;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: rgba(255,255,255,0.85);
+  }
+
+  /* ============ FULL-BLEED FACT ============ */
+  .bleed-fact {
+    text-align: center;
+    padding: 100px 20px;
+  }
+  .bleed-fact .lead-in {
+    font-family: Manrope; font-weight: 900;
+    font-size: 12px; color: var(--gold);
+    text-transform: uppercase; letter-spacing: 0.3em;
+    margin-bottom: 16px;
+  }
+  .bleed-fact .fact {
+    font-family: "Archivo Black";
+    font-size: clamp(2.4rem, 7vw, 5.2rem);
+    line-height: 1.05;
+    color: var(--bone);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    max-width: 1100px;
+    margin-left: auto; margin-right: auto;
+  }
+  .bleed-fact .fact .brick-text { color: var(--brick); }
+  .bleed-fact .fact .grass-text { color: var(--grass); }
+  .bleed-fact .fact .gold-text { color: var(--gold); }
+  .bleed-fact .sub {
+    font-family: "DM Serif Display"; font-style: italic;
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 700px; margin: 0 auto;
+  }
+
+  /* ============ FOOTER ============ */
+  footer.bottom {
+    background: var(--ink-2);
+    border-top: 1px solid rgba(245,241,230,0.12);
+    padding: 60px 0 40px;
+    color: var(--muted);
+  }
+  footer.bottom .meta {
+    font-family: Manrope; font-weight: 800;
+    font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.18em;
+    margin-bottom: 16px;
+    color: var(--gold);
+  }
+  footer.bottom .src {
+    font-family: Inter; font-size: 13px;
+    line-height: 1.7;
+    color: rgba(245,241,230,0.7);
+    max-width: 800px;
+  }
+  footer.bottom .closing {
+    margin-top: 40px;
+    font-family: "DM Serif Display";
+    font-style: italic;
+    font-size: 18px;
+    color: var(--bone);
+  }
+
+  ::selection { background: var(--gold); color: var(--ink); }
+
+  /* ============ SHARE BAR ============ */
+  .share-bar {
+    background: var(--ink);
+    padding: 50px 0;
+    text-align: center;
+    border-top: 1px solid rgba(245,241,230,0.1);
+    border-bottom: 1px solid rgba(245,241,230,0.1);
+  }
+  .share-bar .label {
+    font-family: Manrope; font-weight: 900;
+    font-size: 11px; color: var(--gold);
+    text-transform: uppercase; letter-spacing: 0.3em;
+    margin-bottom: 18px;
+  }
+  .share-bar .buttons {
+    display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
+  }
+  .share-bar a {
+    display: inline-block;
+    font-family: Manrope; font-weight: 800;
+    font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.14em;
+    padding: 12px 22px;
+    border: 2px solid var(--bone);
+    color: var(--bone);
+    text-decoration: none;
+    background: transparent;
+    transition: all 0.15s;
+  }
+  .share-bar a:hover {
+    background: var(--bone); color: var(--ink);
+  }
+  .share-bar a.primary {
+    background: var(--brick); border-color: var(--brick);
+  }
+  .share-bar a.primary:hover {
+    background: var(--bone); color: var(--ink); border-color: var(--bone);
+  }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="row">
+    <div class="brand">College Park · Public Record</div>
+    <div class="meta">Updated May 14, 2026</div>
+  </div>
+</nav>
+
+<!-- ============== HERO ============== -->
+<header class="hero">
+  <div class="wrap hero-content">
+    <div class="breaking">Breaking — May 13, 2026</div>
+
+    <h1 class="title">
+      THEY <span class="accent">SOLD</span><br>
+      THE <span class="blood">PARK.</span>
+    </h1>
+
+    <p class="lead">
+      A 6.5-acre public park, dedicated to youth baseball. Morehouse College offered the city <strong style="font-style:normal;">$2 million</strong> to preserve it. The city manager rejected the higher offer and sold it to a private developer — <strong style="font-style:normal;">Creed Acquisitions</strong> — for <strong style="font-style:normal;">$1.5 million</strong>. The deal was authorized in executive session. The buyer had given campaign contributions to multiple council members. Last night, at <strong style="font-style:normal;">11:54 p.m.</strong>, the same council deeded another acre to the same buyer for <strong style="font-style:normal;">up to $110,000</strong>. The Ward 1 councilwoman seconded both motions.
+    </p>
+
+    <div class="lead-pill-row">
+      <div class="lead-pill">Original parcel · <strong>6.5 acres</strong></div>
+      <div class="lead-pill">Sold to Creed · <strong>$1.5M</strong></div>
+      <div class="lead-pill blood">Morehouse offered · <strong>$2M</strong></div>
+      <div class="lead-pill grass">Use · <strong>Public park &amp; ballfields</strong></div>
+    </div>
+
+    <div class="scroll-cue">The full timeline</div>
+  </div>
+</header>
+
+<!-- ============== A LITTLE CONTEXT BEFORE THE STORY ============== -->
+<section class="chap" style="background: linear-gradient(180deg, var(--ink) 0%, var(--ink-2) 100%); padding: 80px 0;">
+  <div class="narrow">
+
+    <div style="display:flex; align-items:center; gap:14px; margin-bottom: 28px;">
+      <span style="display:inline-flex; align-items:center; gap:10px; background:rgba(212,168,87,0.14); color:var(--gold); padding:8px 16px; border:1px solid rgba(212,168,87,0.45); font-family:Manrope; font-weight:900; font-size:11px; text-transform:uppercase; letter-spacing:0.2em;">
+        Part One · A series on the College Park land record
+      </span>
+    </div>
+
+    <h2 class="chap-headline" style="margin-bottom: 28px;">
+      Before the timeline, <span style="color:var(--gold);">a little context.</span>
+    </h2>
+
+    <div class="chap-body">
+      <p style="font-size: 1.15rem; line-height: 1.65;">
+        Bill Evans Field is a public park in Ward 1 of College Park. For years, it hosted youth baseball, college baseball, and the kind of weekend community life that smaller cities are made of. What happened to it didn't happen all at once. It happened in stages — in council meetings, in executive sessions late at night, in newspaper editorials, and in the slow, often confusing way local government decisions actually unfold.
+      </p>
+      <p style="font-size: 1.05rem;">
+        You'll meet a few people in the chapters below. The Mayor — Bianca Motley Broom — opposed the sale on camera. Two councilmen, Joe Carn and Roderick Gay, moved the consequential motions. The buyer was Creed Acquisitions. The Atlanta Journal-Constitution later reported that Creed had given campaign contributions to multiple council members. Morehouse College offered the city more money to preserve the field as a ballpark; the city manager rejected the higher offer.
+      </p>
+      <p style="font-size: 1.05rem;">
+        And the Ward 1 councilwoman — <strong>Dr. Jamelle McKenzie</strong>, who represents the neighborhood where the field sits — has been on both sides of this. Worth knowing up front, because her position is part of the story, and it has moved more than once in two years.
+      </p>
+    </div>
+
+    <!-- The five moments — oscillation -->
+    <div style="margin: 44px 0; padding: 26px 28px; background: rgba(245,241,230,0.04); border-left: 4px solid var(--gold);">
+      <div style="font-family: Manrope; font-weight: 900; font-size: 10px; text-transform: uppercase; letter-spacing: 0.24em; color: var(--gold); margin-bottom: 18px;">
+        Five moments to keep in mind as you read
+      </div>
+
+      <div style="display:grid; grid-template-columns: 130px 1fr; gap:18px; padding:14px 0; border-bottom: 1px solid rgba(245,241,230,0.1);">
+        <div style="font-family:Manrope; font-weight:800; font-size:11px; text-transform:uppercase; letter-spacing:0.12em; color:var(--muted);">Feb 19, 2024<br><span style="color:var(--brick);">Council · Aye</span></div>
+        <div style="font-family:Inter; font-size:15px; line-height:1.55; color:var(--bone);">
+          She seconded the motion to start the sale. Voted Aye.
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns: 130px 1fr; gap:18px; padding:14px 0; border-bottom: 1px solid rgba(245,241,230,0.1);">
+        <div style="font-family:Manrope; font-weight:800; font-size:11px; text-transform:uppercase; letter-spacing:0.12em; color:var(--muted);">Jun 17, 2024<br><span style="color:var(--brick);">Defended</span></div>
+        <div style="font-family:Inter; font-size:15px; line-height:1.55; color:var(--bone);">
+          She defended the sale to constituents: <em style="font-family:'DM Serif Display';">"Bill Evans Field is not used by our [residents]."</em>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns: 130px 1fr; gap:18px; padding:14px 0; border-bottom: 1px solid rgba(245,241,230,0.1);">
+        <div style="font-family:Manrope; font-weight:800; font-size:11px; text-transform:uppercase; letter-spacing:0.12em; color:var(--muted);">Feb 2025<br><span style="color:var(--grass);">BIDA · Nay</span></div>
+        <div style="font-family:Inter; font-size:15px; line-height:1.55; color:var(--bone);">
+          Now serving as Council Liaison to BIDA, she voted <strong>against</strong> moving the sale forward (per United College Park's published BIDA vote scorecard).
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns: 130px 1fr; gap:18px; padding:14px 0; border-bottom: 1px solid rgba(245,241,230,0.1);">
+        <div style="font-family:Manrope; font-weight:800; font-size:11px; text-transform:uppercase; letter-spacing:0.12em; color:var(--muted);">Sep 2, 2025<br><span style="color:var(--grass);">"Save it"</span></div>
+        <div style="font-family:Inter; font-size:15px; line-height:1.55; color:var(--bone);">
+          She said on the record: <em style="font-family:'DM Serif Display';">"I think we should save the ones we've got including Bill Evans Field."</em>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns: 130px 1fr; gap:18px; padding:14px 0;">
+        <div style="font-family:Manrope; font-weight:800; font-size:11px; text-transform:uppercase; letter-spacing:0.12em; color:var(--muted);">May 13, 2026<br>11:54 p.m.<br><span style="color:var(--brick);">Council · Aye</span></div>
+        <div style="font-family:Inter; font-size:15px; line-height:1.55; color:var(--bone);">
+          She seconded both motions to sell another acre at the same complex to the same buyer for up to $110,000.
+        </div>
+      </div>
+    </div>
+
+    <div class="chap-body">
+      <p style="font-size: 1.05rem;">
+        What you do with that is up to you. The chapters below are sourced to public meeting minutes, the Atlanta Journal-Constitution, WSB-TV, and a verbatim transcript from last night. Read them the way you would any neighborhood story — slowly, with the people in it as people, and the dates in the order they actually happened.
+      </p>
+      <p style="font-size: 1rem; color: var(--muted); font-style: italic;">
+        This is the first piece in a small series about how a few specific decisions got made in College Park over the past two years. Each story stands on its own. This one starts with a baseball field.
+      </p>
+    </div>
+
+    <div style="margin-top: 40px; font-family: Manrope; font-weight: 900; font-size: 12px; color: var(--gold); text-transform: uppercase; letter-spacing: 0.24em;">
+      Start with what Bill Evans Field was &nbsp;↓
+    </div>
+  </div>
+</section>
+
+<!-- ============== CHAPTER 1: WHAT BILL EVANS FIELD WAS ============== -->
+<section class="chap grass-bg">
+  <div class="narrow">
+    <div class="chap-num">Chapter 1</div>
+    <h2 class="chap-headline">First, what Bill Evans Field <span class="alt">actually was.</span></h2>
+
+    <div class="parcel-visual">
+      <div class="label">Bill Evans Baseball Field</div>
+      <div class="acres">
+        <div class="num">6.5</div>
+        <div class="unit">Acres</div>
+      </div>
+      <div class="diamond"></div>
+      <div class="caption">Designated public park · Atlanta University complex · Marquis Grissom Baseball Association</div>
+    </div>
+
+    <div class="chap-body">
+      <p>
+        Bill Evans Field is a <strong>6.5-acre baseball complex</strong> in the heart of College Park. It is officially designated a <strong>public park</strong> under Chapter 13 of the College Park City Code. For years it has been used by the <strong>Atlanta University complex</strong> and the <strong>Marquis Grissom Baseball Association</strong> — a youth sports organization founded by the former MLB All-Star.
+      </p>
+      <p>
+        On <span class="gold">January 16, 2024</span>, before any of what follows, the council unanimously approved <strong>$319,000 annually</strong> in Fulton County Arts and Culture improvements to that same field. The city was investing in it. The community was using it. It was, in every public-record sense, a working public asset.
+      </p>
+      <p>
+        Five weeks later, the council started giving it away.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CHAPTER 2: THE QUITCLAIM ============== -->
+<section class="chap dark">
+  <div class="narrow">
+    <div class="chap-num">Chapter 2</div>
+    <h2 class="chap-headline">The transfer happened in <span class="alt">two executive sessions</span> &mdash; three months apart.</h2>
+
+    <div class="chap-body">
+      <p>
+        On <span class="gold">February 19, 2024</span>, at 9:37 p.m., the College Park City Council went into Executive Session for "Real Estate and Personnel." When they returned to public session, Councilman Joe Carn moved, with a second by Councilwoman Jamelle McKenzie, to <strong>direct city staff to execute a quitclaim deed transferring approximately 6.5 acres at Bill Evans Field to BIDA</strong> — the Business and Industrial Development Authority. The vote was unanimous.
+      </p>
+      <p>
+        There was no public hearing. There was no published appraisal. There was no marketing period. There was no notice to the youth sports organizations using the field. The motion was made and passed in the same minute they emerged from a closed-door meeting.
+      </p>
+      <p>
+        On <span class="gold">May 6, 2024</span>, at 12:02 a.m. — past midnight — the council entered another Executive Session, this time for "Real Estate and Litigation." Councilman Carn moved to <strong>authorize the Mayor to formally execute the quitclaim deed</strong>. Councilwoman Arnold seconded. A separate MOU designating the proceeds for Phillips Park passed 3-0 with Arnold abstaining over concerns about an amendment stripping the City Manager's signing authority.
+      </p>
+    </div>
+
+    <div class="pullquote">
+      <div class="mark">"</div>
+      <div class="text">Bill Evans Field is officially designated a public park in Chapter 13 of the City Code. The city is prohibited from disposing of public park land after it is dedicated to the public.</div>
+      <div class="attr">— Julie McGouirk, public comment · August 19, 2024</div>
+    </div>
+
+    <div class="chap-body">
+      <p>
+        McGouirk was invoking the <strong>Public Trust Doctrine</strong> — a long-established legal principle that government cannot dispose of dedicated public parkland without specific procedural protections. The council, on the record, did not respond to the legal challenge. The transfer proceeded.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CHAPTER 3: THE BUYER ============== -->
+<section class="chap blood">
+  <div class="narrow">
+    <div class="chap-num">Chapter 3</div>
+    <h2 class="chap-headline">BIDA sold it to <span class="blood-text">Creed Acquisitions</span> for <span class="blood-text">$1.5 million.</span></h2>
+
+    <div class="chap-body">
+      <p>
+        Once Bill Evans Field landed at BIDA — an authority whose board is appointed by the city council — the public-bid requirements that bind the City Council no longer applied in the same way. BIDA proceeded to sell the parcel to <strong>Creed Acquisitions, an affiliate of H.J. Russell &amp; Company</strong>, for $1.5 million.
+      </p>
+      <p>
+        On the record at the August 19, 2024 council meeting, longtime resident Tom Coleman ran the math out loud for the council:
+      </p>
+    </div>
+
+    <div class="pullquote blood">
+      <div class="mark">"</div>
+      <div class="text">You're selling our soul for cheap.</div>
+      <div class="attr">— Tom Coleman, public comment · August 19, 2024</div>
+    </div>
+
+    <div class="math-stack">
+      <div class="math-row">
+        <div class="math-label">Bill Evans Field — total acreage<span class="sub">Per Feb 19, 2024 quitclaim motion</span></div>
+        <div class="math-value">6.5 acres</div>
+      </div>
+      <div class="math-row">
+        <div class="math-label">Sale price to Creed Acquisitions<span class="sub">Sale closed June 12, 2024 (per AJC)</span></div>
+        <div class="math-value">$1,500,000</div>
+      </div>
+      <div class="math-row">
+        <div class="math-label">Per acre<span class="sub">Calculated from total sale price</span></div>
+        <div class="math-value">~$230,769</div>
+      </div>
+      <div class="math-row">
+        <div class="math-label">Per square foot · what Creed paid<span class="sub">Per Atlanta Journal-Constitution editorial, June 19, 2024</span></div>
+        <div class="math-value">$5.74</div>
+      </div>
+      <div class="math-row total">
+        <div class="math-label">Per square foot · market comparable<span class="sub">Average residential lot in the area, per AJC</span></div>
+        <div class="math-value huge">$11.94</div>
+      </div>
+    </div>
+
+    <div class="chap-body">
+      <p>
+        Creed paid <strong>about half of comparable market value</strong>. In a metropolitan submarket where vacant residential land routinely transacts at $12 a square foot, the city's redevelopment authority sold a dedicated public park at $5.74. The buyer got roughly $1.5 million in built-in equity on day one.
+      </p>
+      <p>
+        At no point in the public record did the council publicly disclose <strong>the appraised value</strong> of the parcel, the <strong>list of bidders or interested parties</strong>, the <strong>marketing process BIDA used</strong>, or any <strong>comparable sales</strong> used to set the price.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CHAPTER 4: THE ALTERNATIVE THEY REJECTED ============== -->
+<section class="chap">
+  <div class="narrow">
+    <div class="chap-num">Chapter 4</div>
+    <h2 class="chap-headline">Morehouse College offered <span class="alt">$2 million</span> to save the field. The city took the lower offer.</h2>
+
+    <div class="chap-body">
+      <p>
+        Morehouse College — joined by Marquis Grissom Baseball Association — put a serious proposal in front of the city. The plan: rehabilitate Bill Evans Field, partner with a local youth baseball organization, and make it the home field for <strong>Morehouse and Clark Atlanta baseball</strong>. They called it, on the record, <em>"a jewel baseball field of the South."</em>
+      </p>
+      <p>
+        The Morehouse offer reportedly came in at <strong class="gold">$2 million</strong>. The Creed offer was <strong class="gold">$1.5 million</strong>. The city manager <strong>rejected the higher offer</strong> from the historically Black college that wanted to preserve the field's use as a ballfield, and accepted the lower offer from the private developer who would build apartments on it.
+      </p>
+    </div>
+
+    <div class="pullquote grass">
+      <div class="mark">"</div>
+      <div class="text">A jewel baseball field of the South.</div>
+      <div class="attr">— Marquis Grissom + Morehouse College proposal · presented to Council</div>
+    </div>
+
+    <div class="chap-body">
+      <p>
+        On <span class="gold">April 7, 2025</span>, when residents kept pressing the issue, Councilman Roderick Gay dismissed Morehouse on the record as <em>"a conversation"</em> with no legal documentation: <strong>"It just doesn't exist."</strong>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CHAPTER 4.5: THE CAMPAIGN MONEY ============== -->
+<section class="chap blood">
+  <div class="narrow">
+    <div class="chap-num">Chapter 4.5</div>
+    <h2 class="chap-headline">The buyer had given <span class="blood-text">campaign contributions</span> to council members.</h2>
+
+    <div class="chap-body">
+      <p>
+        The Atlanta Journal-Constitution editorial of <span class="gold">June 19, 2024</span>, written by Annemarie O'Bea, reported the part the council didn't mention from the dais:
+      </p>
+    </div>
+
+    <div class="pullquote blood">
+      <div class="mark">"</div>
+      <div class="text">Creed Acquisitions made several campaign contributions to more than one council member.</div>
+      <div class="attr">— Atlanta Journal-Constitution editorial · June 19, 2024</div>
+    </div>
+
+    <div class="chap-body">
+      <p>
+        The buyer was not arms-length. The buyer had a financial relationship with members of the very council that authorized the sale. This is the textbook structure of a pay-to-play allegation, and it sits in plain sight in a major-newspaper editorial that ran a week after the closing.
+      </p>
+      <p>
+        No council member, on the record, addressed the campaign-contribution disclosure. No one recused themselves. The vote proceeded.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CHAPTER 4.75: THE WARD COUNCILWOMAN'S CONTRADICTIONS ============== -->
+<section class="chap dark">
+  <div class="narrow">
+    <div class="chap-num">Chapter 5</div>
+    <h2 class="chap-headline">Bill Evans Field is in Ward 1. The <span class="blood-text">Ward 1 councilwoman</span> seconded the motion to sell it.</h2>
+
+    <div class="chap-body">
+      <p>
+        Bill Evans Field sits inside Ward 1 of College Park. The Ward 1 council member is <strong>Councilwoman Dr. Jamelle McKenzie</strong>. The first vote to start the disposal process — Feb 19, 2024, the executive-session quitclaim directive — was moved by Councilman Joe Carn. <strong>It was seconded by McKenzie.</strong> She voted Aye.
+      </p>
+      <p>
+        She then spent the next eighteen months saying things to her constituents that were difficult to reconcile with that vote.
+      </p>
+    </div>
+
+    <!-- McKenzie timeline of contradictions -->
+    <div class="timeline" style="margin: 60px 0;">
+
+      <div class="tl-event blood huge">
+        <div class="tl-date">Feb 19, 2024 · The Vote</div>
+        <div class="tl-title">McKenzie seconds the motion. Votes Aye.</div>
+        <div class="tl-meta">Carn moves to direct staff to execute a quitclaim of 6.5 acres at Bill Evans Field to BIDA. <strong>McKenzie seconds. McKenzie votes Aye.</strong> This is the originating action that started the sale process.</div>
+        <span class="tl-tag blood">Seconded · Voted Aye</span>
+      </div>
+
+      <div class="tl-event blood">
+        <div class="tl-date">Jun 17, 2024 · The Defense</div>
+        <div class="tl-title">"Bill Evans Field is not used by our [residents]."</div>
+        <div class="tl-meta">Resident Althea Morris pleaded against the sale. McKenzie defended it on the record:</div>
+        <div style="background:rgba(180,64,64,0.08); border-left:3px solid var(--brick); padding:14px 18px; margin-top:14px; font-family:'DM Serif Display'; font-style:italic; color: var(--bone);">"Bill Evans Field is not used by our — and I'm not making an excuse, but it's not the part of the field that we use right now. It's only been used by Morehouse three months of the year."</div>
+        <div class="tl-meta" style="margin-top:10px;">She then added: <em>"I did not vote. I wasn't here on May 6th."</em> — distancing herself from the quitclaim execution while omitting that she had personally <strong>seconded the originating motion</strong> three months earlier.</div>
+        <span class="tl-tag blood">"Not used by our residents"</span>
+      </div>
+
+      <div class="tl-event blood">
+        <div class="tl-date">Per AJC reporting · 2024</div>
+        <div class="tl-title">McKenzie publicly claimed she didn't know about the Morehouse proposal.</div>
+        <div class="tl-meta">Per news reporting, official emails revealed that <strong>McKenzie knew about the Morehouse $2 million counter-proposal as far back as February</strong> and was <em>"an active participant in trying to prevent the proposal from being presented to the City Council."</em> Her public position was that she did not know.</div>
+        <span class="tl-tag blood">Email contradiction</span>
+        <span class="tl-tag">Per AJC reporting</span>
+      </div>
+
+      <div class="tl-event">
+        <div class="tl-date">Apr 7, 2025 · The Legal Line</div>
+        <div class="tl-title">"Brady Field is federally protected. Bill Evans is not."</div>
+        <div class="tl-meta">When asked about losing green space, McKenzie distinguished Brady Field as <em>"a protected field"</em> under the U.S. Secretary of the Interior, requiring federal permission before sale. Bill Evans, by her account, was not protected. <strong>The implication: nothing was stopping them.</strong></div>
+      </div>
+
+      <div class="tl-event grass huge">
+        <div class="tl-date">Sep 2, 2025 · The Reversal</div>
+        <div class="tl-title">"I think we should save the ones we've got including Bill Evans Field."</div>
+        <div class="tl-meta">Eighteen months after seconding the motion to start the sale, McKenzie said this on the record:</div>
+        <div style="background:rgba(45,110,63,0.08); border-left:3px solid var(--grass); padding:14px 18px; margin-top:14px; font-family:'DM Serif Display'; font-style:italic; color: var(--bone);">"I still don't think it's too late because we have an opportunity to do the right thing... I think we should save the ones we've got including Bill Evans Field."</div>
+        <div class="tl-meta" style="margin-top:10px;">By that point, the quitclaim was executed, the sale to Creed had closed, and her own constituents had spent over a year asking her to do exactly what she now said she wanted to do.</div>
+        <span class="tl-tag grass">"Should save it"</span>
+      </div>
+
+      <div class="tl-event blood huge">
+        <div class="tl-date">May 13, 2026 · 11:54 p.m. · The Repeat</div>
+        <div class="tl-title">McKenzie seconded BOTH motions to sell another acre to Creed.</div>
+        <div class="tl-meta">Eight months after publicly saying she wanted to "save" Bill Evans Field, McKenzie seconded both motions at the May 13 meeting:</div>
+        <ol style="margin: 12px 0 12px 24px; color: rgba(245,241,230,0.88); font-family: Inter; font-size: 14px; line-height: 1.6;">
+          <li><strong>11:48 p.m.</strong> — City Council deeds the 1-acre expansion at Bill Badgett Stadium to the Redevelopment Agency. <strong>McKenzie seconded.</strong> Unanimous.</li>
+          <li><strong>11:54 p.m.</strong> — Redevelopment Authority sells that acre to Creed Development for up to $110,000. <strong>McKenzie seconded.</strong> Unanimous.</li>
+        </ol>
+        <div class="tl-meta">Meeting adjourned at 11:55 p.m. The same Council → Authority → Creed pattern as Feb/May 2024. The same buyer. The same Ward 1 councilwoman seconding the motion. The same after-11pm vote. There is no longer ambiguity about what her position is.</div>
+        <span class="tl-tag blood">Seconded both</span>
+        <span class="tl-tag blood">Same pattern</span>
+        <span class="tl-tag blood">After 11 p.m.</span>
+      </div>
+
+    </div>
+
+    <!-- Constituents quote -->
+    <div class="pullquote">
+      <div class="mark">"</div>
+      <div class="text">Why are the voices in one part of your ward asking to protect their land and green space being honored, while others — Bill Evans Field — are being ignored?</div>
+      <div class="attr">— Ward 1 constituent, public comment to McKenzie · 2024</div>
+    </div>
+
+    <div class="chap-body">
+      <p>
+        On <span class="gold">May 13, 2026</span>, when the council authorized the additional acre sale to Creed for $101,000, McKenzie was still the Ward 1 councilwoman. The community her ward includes is still asking what happened to their park.
+      </p>
+      <p>
+        A recall campaign — <strong>recalljamellemckenzie.com</strong> — has been organized by residents directly in response to her votes on Bill Evans Field.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== BIDA VOTE SCORECARD — NAMED ============== -->
+<section class="chap dark">
+  <div class="narrow">
+    <div class="chap-num">Chapter 5.5 · The BIDA Vote, By Name</div>
+    <h2 class="chap-headline">A vote happened. <span class="alt">Seven people made it.</span></h2>
+
+    <div class="chap-body">
+      <p style="font-size: 1.1rem; line-height: 1.65;">
+        Bill Evans Field did not get sold by accident. A specific group of people, voting in a specific room on a specific day, made it happen. The Business and Industrial Development Authority — BIDA — is the city-appointed body that BIDA-board-voted to accept and then dispose of the field. United College Park published the scorecard, by name, with photos, after a key February 2025 BIDA action on the field:
+      </p>
+    </div>
+
+    <div style="margin: 40px auto; max-width: 920px;">
+      <div style="border: 2px solid var(--bone); padding: 6px; background: var(--bone);">
+        <img src="img/bida-vote-scorecard.png" alt="United College Park published BIDA vote scorecard showing each board member's photo and how they voted on Bill Evans Field" style="display: block; width: 100%; height: auto;" />
+      </div>
+      <div style="text-align: center; font-family: Manrope; font-weight: 800; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.16em; margin-top: 14px;">
+        Source: United College Park published vote scorecard · February 2025 BIDA action on Bill Evans Field
+      </div>
+    </div>
+
+    <div class="chap-body">
+      <p style="font-size: 1.05rem;">
+        Four members voted to move the sale forward. Three voted against it. One abstained. Names matter, because votes are made by people, not by buildings.
+      </p>
+
+      <div style="margin: 30px 0; padding: 24px 26px; background: rgba(245,241,230,0.04); border-left: 4px solid var(--brick);">
+        <div style="font-family: Manrope; font-weight: 900; font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; color: var(--brick); margin-bottom: 14px;">
+          Voted to sell &mdash; or to allow the sale to move forward
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <div><strong style="color:var(--bone);">Dr. Subrenia M. Willis</strong> <span style="color:var(--muted); font-size:13px;">— BIDA Chair</span></div>
+          <div><strong style="color:var(--bone);">Selissa Jefferson</strong> <span style="color:var(--muted); font-size:13px;">— BIDA Board Member, Ward 1</span></div>
+          <div><strong style="color:var(--bone);">Lisa Parker</strong> <span style="color:var(--muted); font-size:13px;">— BIDA Vice Chair</span></div>
+        </div>
+      </div>
+
+      <div style="margin: 20px 0; padding: 24px 26px; background: rgba(245,241,230,0.04); border-left: 4px solid var(--muted);">
+        <div style="font-family: Manrope; font-weight: 900; font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; color: var(--muted); margin-bottom: 14px;">
+          Abstained
+        </div>
+        <div><strong style="color:var(--bone);">Tracey Wyatt</strong> <span style="color:var(--muted); font-size:13px;">— BIDA Board Member</span></div>
+      </div>
+
+      <div style="margin: 20px 0; padding: 24px 26px; background: rgba(245,241,230,0.04); border-left: 4px solid var(--grass);">
+        <div style="font-family: Manrope; font-weight: 900; font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; color: var(--grass); margin-bottom: 14px;">
+          Voted against the sale
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <div><strong style="color:var(--bone);">Leithea Williams</strong> <span style="color:var(--muted); font-size:13px;">— BIDA Secretary / Treasurer</span></div>
+          <div><strong style="color:var(--bone);">Dr. Jamelle McKenzie</strong> <span style="color:var(--muted); font-size:13px;">— Council Liaison, Ward 1</span></div>
+          <div><strong style="color:var(--bone);">Mayor Bianca Motley Broom</strong></div>
+        </div>
+      </div>
+
+      <p style="font-size: 1.05rem; margin-top: 30px;">
+        Two things are worth holding together as you read this list.
+      </p>
+      <p style="font-size: 1.05rem;">
+        First, in February 2025, on the BIDA side, Councilwoman <strong>Jamelle McKenzie voted against the sale.</strong> That was after she had seconded the original Council quitclaim in February 2024, after she had publicly defended the sale in June 2024, and a few months before she would say in September 2025 that the field should be saved. Then, fifteen months later, last night at 11:54 p.m., she seconded both motions to sell another acre at the same complex to the same buyer. She has been on both sides of this — more than once.
+      </p>
+      <p style="font-size: 1.05rem;">
+        Second, the BIDA Chair, <strong>Dr. Subrenia M. Willis</strong>, voted to move the sale forward. The Willis family runs the Georgia Favor Track Club whose annual classic is held at Bill Badgett Stadium — the same complex now being chipped away to Creed Development. The question we'll take up in the next piece in this series isn't speculative. It's a vote that's on the record.
+      </p>
+    </div>
+
+    <p style="font-family: Manrope; font-weight: 700; font-size: 11px; color: var(--muted); margin-top: 30px; line-height: 1.5;">
+      Source attribution: vote scorecard published by United College Park (UCP). The image displays names as UCP rendered them; official council records show several spellings differently — Subrenia Willis, Selissa Jefferson, Lisa Parker, Tracey Wyatt, Leithea Williams. We have used the council-record spellings in our text above.
+    </p>
+  </div>
+</section>
+
+<!-- ============== MEDIA COVERAGE FULL-BLEED ============== -->
+<section class="chap deep">
+  <div class="narrow" style="text-align:center;">
+    <div class="chap-num">The Press Was Watching</div>
+    <h2 class="chap-headline">This story was covered <span class="alt">in real time.</span></h2>
+
+    <div class="action-cards" style="margin-top: 50px;">
+      <div class="action-card">
+        <h3>The Atlanta Journal-Constitution</h3>
+        <p style="font-style:italic; font-family:'DM Serif Display'; font-size:17px; line-height:1.4; margin-bottom:14px;">"Calling foul on College Park's sale of a popular ballfield"</p>
+        <p>An opinion editorial published June 19, 2024 by Annemarie O'Bea documented the $1.5M sale to Creed, the $5.74/sq ft price vs $11.94 market comparable, the Morehouse $2 million counter-offer the city manager rejected, and the campaign contributions from Creed to council members.</p>
+      </div>
+
+      <div class="action-card">
+        <h3>WSB-TV Channel 2 Atlanta</h3>
+        <p style="font-style:italic; font-family:'DM Serif Display'; font-size:17px; line-height:1.4; margin-bottom:14px;">"Some College Park residents, mayor, against teardown of ballfield"</p>
+        <p>Mayor Bianca Motley Broom on camera: <em>"I was not in favor of selling Bill Evans field. I think we need all the greenspace we can muster. I'm not an appraiser, but I do think that price is low — that's another reason I'm not in favor of the sale."</em></p>
+      </div>
+
+      <div class="action-card">
+        <h3>Recall Campaign</h3>
+        <p style="font-style:italic; font-family:'DM Serif Display'; font-size:17px; line-height:1.4; margin-bottom:14px;">recalljamellemckenzie.com</p>
+        <p>Ward 1 residents launched a formal recall effort against Councilwoman McKenzie in response to her vote and her conduct around Bill Evans Field. The campaign is documented at recalljamellemckenzie.com.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FULL-BLEED FACT ============== -->
+<section class="bleed-fact deep">
+  <div class="lead-in">On the record · March 2, 2026</div>
+  <div class="fact">
+    "I need <span class="grass-text">Bill Evans Field</span> to close so we can <span class="brick-text">get our money</span>."
+  </div>
+  <div class="sub">
+    — Councilman Roderick Gay, expressing frustration that the delayed closing was holding up Ward 4's anticipated proceeds. He confirmed Ward 4 had already "parked" its enhancement money in reliance on a closing that hadn't yet happened.
+  </div>
+</section>
+
+<!-- ============== CHAPTER 6: LAST NIGHT ============== -->
+<section class="chap blood">
+  <div class="narrow">
+    <div class="chap-num">Chapter 6 · The Latest</div>
+    <h2 class="chap-headline">Last night, at <span class="blood-text">11:54 p.m.,</span> they did it again.</h2>
+
+    <div class="chap-body">
+      <p>
+        On <span class="gold">May 13, 2026</span> at <strong>11:44 p.m.</strong>, the council exited executive session. Ten minutes later, at <strong>11:54 p.m.</strong>, they passed two motions back to back. The meeting then adjourned until June.
+      </p>
+      <p>
+        <strong>The first motion (Mayor &amp; Council, 11:48 p.m.):</strong> "Motion to approve the city council deeding the 1-acre expansion area of the Creed development site at Bill Badgett Stadium per the map that we attached, and move forward with that to the College Park Redevelopment Agency."
+      </p>
+      <p style="font-family:'DM Serif Display'; font-style:italic; font-size:1.15rem; color:var(--bone); border-left:3px solid var(--brick); padding:8px 18px; margin:24px 0;">
+        Moved by Councilman <strong style="font-style:normal;">Roderick Gay</strong>. Seconded by Councilwoman <strong style="font-style:normal;">Jamelle McKenzie</strong>. <strong style="font-style:normal;">Unanimous.</strong>
+      </p>
+      <p>
+        <strong>The second motion (Redevelopment Authority, 11:54 p.m., minutes after the first):</strong> "Motion to approve the sale and conveyance of approximately 1 acre of the redevelopment expansion area at Bill Badgett Stadium to Creed Development, <strong>not to exceed the sale price of $110,000</strong>, in furtherance of the redevelopment purposes... and per the city's approved redevelopment area resolution 20269."
+      </p>
+      <p style="font-family:'DM Serif Display'; font-style:italic; font-size:1.15rem; color:var(--bone); border-left:3px solid var(--brick); padding:8px 18px; margin:24px 0;">
+        Moved by Councilman <strong style="font-style:normal;">Roderick Gay</strong>. Seconded by Councilwoman <strong style="font-style:normal;">Jamelle McKenzie</strong>. <strong style="font-style:normal;">Unanimous.</strong> Meeting adjourned at <strong style="font-style:normal;">11:55 p.m.</strong>
+      </p>
+    </div>
+
+    <div class="pullquote blood">
+      <div class="mark">"</div>
+      <div class="text">It is the exact same play. City Council deeds the parcel to the redevelopment authority. The redevelopment authority sells it to Creed. They sat as the city council, voted unanimously, immediately re-entered as the redevelopment authority, and voted unanimously again. Eleven minutes. After eleven o'clock at night. With the same buyer. Same Ward 1 councilwoman seconding both motions.</div>
+      <div class="attr">— What the transcript shows, May 13, 2026</div>
+    </div>
+
+    <div class="math-stack">
+      <div class="math-row">
+        <div class="math-label">2024 sale to Creed<span class="sub">$1.5M / 6.5 acres at Bill Evans Field</span></div>
+        <div class="math-value">~$230,769 / acre</div>
+      </div>
+      <div class="math-row">
+        <div class="math-label">May 13, 2026 sale to Creed<span class="sub">Up to $110,000 / 1 acre · Bill Badgett Stadium expansion area</span></div>
+        <div class="math-value">$110,000 / acre</div>
+      </div>
+      <div class="math-row total">
+        <div class="math-label">Per-acre price drop<span class="sub">Same buyer · Two years later</span></div>
+        <div class="math-value huge">−52%</div>
+      </div>
+    </div>
+
+    <div class="chap-body">
+      <p>
+        The per-acre price went down. To the same buyer. Two years later. With no public bidding process. With no published appraisal. In a metropolitan land market that has not lost half its value.
+      </p>
+      <p>
+        And the Ward 1 councilwoman who in <span class="gold">September 2025</span> said on the record, <em>"I think we should save the ones we've got including Bill Evans Field,"</em> — eight months ago — <strong>seconded both motions to sell another acre of the same complex to the same buyer at half the price.</strong>
+      </p>
+      <p>
+        The meeting then adjourned until June.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CHAPTER 6: WHAT'S MISSING ============== -->
+<section class="chap dark">
+  <div class="narrow">
+    <div class="chap-num">Chapter 7</div>
+    <h2 class="chap-headline">What's <span class="blood-text">missing</span> from the public record.</h2>
+
+    <div class="chap-body">
+      <p>
+        These are documents that, if Bill Evans Field had been disposed of through a normal, defensible municipal process, would exist and would have been publicly produced. They have not been.
+      </p>
+    </div>
+
+    <div class="missing-grid">
+      <div class="missing-item">
+        <div class="x">✗</div>
+        <div class="label">A published appraisal</div>
+        <div class="note">No appraised market value has ever been stated on the public record by the council.</div>
+      </div>
+      <div class="missing-item">
+        <div class="x">✗</div>
+        <div class="label">A list of bidders</div>
+        <div class="note">No public record of who else, if anyone, was offered the parcel. Was Morehouse considered? Were other developers?</div>
+      </div>
+      <div class="missing-item">
+        <div class="x">✗</div>
+        <div class="label">A marketing process</div>
+        <div class="note">No published RFP, no listing period, no public solicitation. Creed appears to have been the only buyer engaged.</div>
+      </div>
+      <div class="missing-item">
+        <div class="x">✗</div>
+        <div class="label">Comparable sales</div>
+        <div class="note">No comparable per-square-foot transactions disclosed to justify the $0.96 / sq ft price.</div>
+      </div>
+      <div class="missing-item">
+        <div class="x">✗</div>
+        <div class="label">A Public Trust analysis</div>
+        <div class="note">The city's response to the Public Trust Doctrine challenge raised by Julie McGouirk on Aug 19, 2024 was not entered into the record.</div>
+      </div>
+      <div class="missing-item">
+        <div class="x">✗</div>
+        <div class="label">A community-use replacement plan</div>
+        <div class="note">Marquis Grissom + Morehouse offered one. The council dismissed it. No alternative was substituted before disposing of the field.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CHAPTER 7: WHAT YOU CAN DO ============== -->
+<section class="chap grass-bg">
+  <div class="narrow">
+    <div class="chap-num">Chapter 8</div>
+    <h2 class="chap-headline">What you can do <span class="alt">right now.</span></h2>
+
+    <div class="chap-body">
+      <p>
+        Three specific actions, in order of effort. All of them are within reach of any College Park resident. You are not the first person to ask these questions — United College Park has been organizing on Bill Evans Field since 2024.
+      </p>
+    </div>
+
+    <div style="margin: 30px 0 40px; border: 2px solid var(--bone);">
+      <img src="img/ucp-virtual-meeting.jpg" alt="United College Park virtual community meeting" style="display:block; width:100%; height:auto;" />
+      <div style="background:var(--ink-2); color: var(--muted); font-family: Manrope; font-weight: 800; font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; padding: 12px 16px; text-align: center;">
+        United College Park · community organizing on Bill Evans Field since 2024
+      </div>
+    </div>
+
+    <div class="action-cards">
+      <div class="action-card">
+        <h3>1 · Speak at the next council meeting</h3>
+        <p>The Public Comment period gives every resident 3 minutes. The on-record statement below is sourced entirely to this page — no allegations beyond the public meeting minutes.</p>
+        <div class="script">
+          "Mayor, council — I am here about Bill Evans Field and what this council did at 11:54 p.m. on May 13. The record shows a public park, transferred to BIDA via executive session on Feb 19, 2024 — a motion seconded by the Ward 1 councilwoman herself — and sold to Creed Acquisitions for $1.5 million when Morehouse College had offered the city $2 million to preserve it. The Atlanta Journal-Constitution reported that Creed had given campaign contributions to multiple council members. The Public Trust Doctrine challenge raised by Julie McGouirk in August 2024 was never answered on the record. <strong>On May 13, 2026, at 11:54 p.m., this council ran the exact same play again — deeding an additional acre at the Creed development site to the redevelopment authority and immediately selling it to Creed for up to $110,000, with the Ward 1 councilwoman seconding both motions despite saying eight months ago that she wanted to save the field.</strong> I am asking this council, on the record, to publicly produce the appraisal, the marketing record, the rejected Morehouse offer documentation, the executive session minutes from May 13, and every council member's campaign-finance disclosures listing contributions from Creed Acquisitions, Creed Development, H.J. Russell, or their affiliates."
+        </div>
+      </div>
+
+      <div class="action-card">
+        <h3>2 · File an Open Records Request</h3>
+        <p>A targeted ORR closes the documentation gap. Submit to the City Clerk in writing. The request below is specific enough to be hard to deny.</p>
+        <div class="script">
+          "Pursuant to the Georgia Open Records Act, I request copies of: (1) all appraisals of Bill Evans Field commissioned by the City or BIDA from January 1, 2023 to present; (2) all marketing materials, RFPs, listings, and broker engagement records related to the sale of Bill Evans Field to Creed Acquisitions; (3) all bidder communications and bid submissions — <strong>including the Morehouse College offer reportedly valued at $2 million</strong> and any city-side memo, email, or determination rejecting it; (4) the executed sale agreement and any amendments; (5) all communications between any city official, BIDA member, or council member and any representative of Creed Acquisitions, H.J. Russell &amp; Company, or Morehouse College between January 1, 2024 and the present; (6) all documents regarding the May 13, 2026 additional acre sale; (7) all emails to or from Councilwoman Jamelle McKenzie referencing 'Morehouse,' 'Bill Evans,' or 'Creed' from January 1, 2024 forward."
+        </div>
+      </div>
+
+      <div class="action-card">
+        <h3>3 · Share this page</h3>
+        <p>Every share is one more resident who knows the actual record. This page is sourced entirely to public council minutes; nothing on it is allegation. Forward it to your council member. Tag the buyer. Send it to the press. Send it to the people in your neighborhood who care about youth baseball.</p>
+        <div class="script">
+          The full record. Sourced. Public. The story of Bill Evans Field, in one place.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== SHARE BAR ============== -->
+<div class="share-bar">
+  <div class="label">Help set the record straight</div>
+  <div class="buttons">
+    <a href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank" rel="noopener" class="primary">Share on Facebook</a>
+    <a href="https://twitter.com/intent/tweet?text=They%20sold%20the%20park.%20%E2%80%94%20The%20Bill%20Evans%20Field%20Story&url=" target="_blank" rel="noopener">Share on X</a>
+    <a href="mailto:?subject=They%20Sold%20the%20Park%20%E2%80%94%20The%20Bill%20Evans%20Field%20Story&body=The%20full%20public-record%20timeline.">Email</a>
+    <a href="javascript:void(0)" onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='LINK COPIED'}); return false;">Copy Link</a>
+  </div>
+</div>
+
+<!-- ============== TIMELINE (FULL) ============== -->
+<section class="chap deep">
+  <div class="narrow">
+    <div class="chap-num">The Full Record</div>
+    <h2 class="chap-headline">Every <span class="alt">Bill Evans Field</span> action, in order.</h2>
+
+    <div class="timeline">
+      <div class="tl-event">
+        <div class="tl-date">Jan 16, 2024</div>
+        <div class="tl-title">$319,000 in Fulton County improvements approved</div>
+        <div class="tl-meta">The council unanimously approved Fulton County Arts and Culture improvements to Bill Evans Baseball Field, in the amount of $319,000 annually. The city was actively investing in the field as a working public asset.</div>
+        <span class="tl-tag grass">Investing in the field</span>
+      </div>
+
+      <div class="tl-event huge blood">
+        <div class="tl-date">Feb 19, 2024 · 9:37pm</div>
+        <div class="tl-title">Executive session — directive to quitclaim 6.5 acres to BIDA</div>
+        <div class="tl-meta">Council entered Executive Session for "Real Estate and Personnel." On exit, <strong>Councilman Carn moved, McKenzie seconded</strong>, to direct city staff to execute a quitclaim deed for approximately 6.5 acres to BIDA. Vote: unanimous. No public hearing. No appraisal disclosed.</div>
+        <span class="tl-tag blood">Executive session</span>
+        <span class="tl-tag">Carn motion · McKenzie second</span>
+      </div>
+
+      <div class="tl-event">
+        <div class="tl-date">Mar 4, 2024</div>
+        <div class="tl-title">Public objection (Tom Coleman)</div>
+        <div class="tl-meta">"The field is well utilized by the Atlanta University complex and MGBA. A suitable replacement should be nailed down before transferring a recreational asset to a private entity." Council took no action in response.</div>
+      </div>
+
+      <div class="tl-event blood">
+        <div class="tl-date">Jun 12, 2024</div>
+        <div class="tl-title">Sale to Creed Acquisitions closes — $1.5M</div>
+        <div class="tl-meta">Per the Atlanta Journal-Constitution, BIDA closes the sale of Bill Evans Field to HJ Russell, DBA Creed Acquisitions, for $1.5 million ($5.74/sq ft, vs market ~$11.94/sq ft). Morehouse College had offered $2 million to preserve the field. The city manager rejected the higher offer.</div>
+        <span class="tl-tag blood">$1.5M sale</span>
+        <span class="tl-tag">Morehouse $2M rejected</span>
+      </div>
+
+      <div class="tl-event blood">
+        <div class="tl-date">Jun 17, 2024</div>
+        <div class="tl-title">McKenzie defends sale: "Bill Evans Field is not used by our [residents]"</div>
+        <div class="tl-meta">Ward 1 Councilwoman McKenzie defended the transfer to citizens pleading against the sale: <em>"Bill Evans Field is not used by our — and I'm not making an excuse, but it's not the part of the field that we use right now. It's only been used by Morehouse three months of the year."</em> Distanced herself from May 6 vote while omitting that she had personally seconded the originating Feb 19 motion.</div>
+        <span class="tl-tag blood">Ward 1 defense</span>
+      </div>
+
+      <div class="tl-event blood">
+        <div class="tl-date">Jun 19, 2024</div>
+        <div class="tl-title">AJC editorial — "Calling foul on College Park's sale of a popular ballfield"</div>
+        <div class="tl-meta">Annemarie O'Bea, AJC editorial. Documents the $1.5M sale, the $5.74/sq ft vs $11.94/sq ft market disparity, the rejected $2M Morehouse offer, and: <strong>"Creed Acquisitions made several campaign contributions to more than one council member."</strong></div>
+        <span class="tl-tag blood">Campaign contributions disclosed</span>
+        <span class="tl-tag">AJC editorial</span>
+      </div>
+
+      <div class="tl-event">
+        <div class="tl-date">Apr 15, 2024</div>
+        <div class="tl-title">Public comment (Mose James IV)</div>
+        <div class="tl-meta">"If city assets are sold, they must be recompensed and replaced. You don't just come here and buy our assets."</div>
+      </div>
+
+      <div class="tl-event huge blood">
+        <div class="tl-date">May 6, 2024 · 12:02am</div>
+        <div class="tl-title">Executive session — quitclaim executed, MOU adopted</div>
+        <div class="tl-meta">Post-midnight Executive Session for "Real Estate and Litigation." <strong>Carn moved, Arnold seconded</strong> to authorize the Mayor to execute the quitclaim. A separate MOU designated proceeds for Phillips Park (Ward 4) — passed 3-0 with Arnold abstaining over signing-authority concerns.</div>
+        <span class="tl-tag blood">Past midnight</span>
+        <span class="tl-tag blood">Executive session</span>
+      </div>
+
+      <div class="tl-event blood">
+        <div class="tl-date">Aug 19, 2024</div>
+        <div class="tl-title">Public Trust Doctrine challenge (Julie McGouirk)</div>
+        <div class="tl-meta">McGouirk formally challenged the transfer as "unlawful" under the Public Trust Doctrine. Council did not respond on the record. Same meeting: MGBA representative Ron Smith stated the org was present to "potentially save Bill Evans Field." Tom Coleman ran the math: <strong>$0.96 per square foot</strong> to Creed Acquisitions / H.J. Russell.</div>
+        <span class="tl-tag blood">Public Trust Doctrine</span>
+        <span class="tl-tag">$0.96/sq ft disclosed</span>
+      </div>
+
+      <div class="tl-event grass">
+        <div class="tl-date">Jan 21, 2025</div>
+        <div class="tl-title">Marquis Grissom + Morehouse present alternative plan</div>
+        <div class="tl-meta">Coleman reported the Creed transfer instrument had "expired." Marquis Grissom Baseball Association and Morehouse College presented a master plan to revitalize the field into "a jewel baseball field of the South." Council acknowledged but did not pursue.</div>
+        <span class="tl-tag grass">Alternative offered</span>
+      </div>
+
+      <div class="tl-event">
+        <div class="tl-date">Feb 3, 2025</div>
+        <div class="tl-title">Coleman email — Creed offer expired</div>
+        <div class="tl-meta">Public-comment email reiterated that the 2024 offer by Creed to convert the field to "high density residences" had expired.</div>
+      </div>
+
+      <div class="tl-event">
+        <div class="tl-date">Apr 7, 2025</div>
+        <div class="tl-title">Gay dismisses Morehouse plan</div>
+        <div class="tl-meta">Councilman Gay stated his vote to support the sale was contingent on $1.25M of proceeds going to Phillips Park as a replacement. Dismissed Morehouse involvement as "a conversation... It just doesn't exist." McKenzie noted nearby Brady Field is federally protected; Bill Evans is not.</div>
+      </div>
+
+      <div class="tl-event">
+        <div class="tl-date">Sep 2, 2025</div>
+        <div class="tl-title">$477,359.73 in Phillips Park paving — reimbursed from Bill Evans proceeds</div>
+        <div class="tl-meta">Council authorized milling and paving of a 7-acre parking lot at Phillips Park, with the cost to be reimbursed from the $1.5M Bill Evans sale proceeds.</div>
+      </div>
+
+      <div class="tl-event grass">
+        <div class="tl-date">Sep 2, 2025</div>
+        <div class="tl-title">McKenzie's reversal: "I think we should save the ones we've got including Bill Evans Field."</div>
+        <div class="tl-meta">Eighteen months after seconding the motion to start the sale, the Ward 1 councilwoman who initiated the transfer publicly says she wants to save the field. The quitclaim is executed. The sale to Creed has closed. Her constituents had been asking her to do exactly this for over a year.</div>
+        <span class="tl-tag grass">"Should save it"</span>
+        <span class="tl-tag blood">Contradicts Feb 2024 vote</span>
+      </div>
+
+      <div class="tl-event">
+        <div class="tl-date">Oct 6, 2025</div>
+        <div class="tl-title">Finance: "Waiting on the proceeds"</div>
+        <div class="tl-meta">Finance Director Terry Jackson confirmed on the record the city was waiting for the proceeds from the sale of Bill Evans to offset Community Enhancement expenditures.</div>
+      </div>
+
+      <div class="tl-event">
+        <div class="tl-date">Jan 20, 2026</div>
+        <div class="tl-title">Closing has not happened</div>
+        <div class="tl-meta">Gay stated for the record that his support for the Creed development was always contingent on the $1.5M proceeds advancing Phillips Park. Noted: "the closing of Creed... hasn't happened yet."</div>
+      </div>
+
+      <div class="tl-event blood">
+        <div class="tl-date">Mar 2, 2026</div>
+        <div class="tl-title">"I need Bill Evans Field to close so we can get our money."</div>
+        <div class="tl-meta">Councilman Gay expressed open frustration over the delayed closing. Admitted Ward 4 had "parked" its enhancement money in reliance on a closing that had not occurred.</div>
+        <span class="tl-tag blood">On the record</span>
+      </div>
+
+      <div class="tl-event">
+        <div class="tl-date">May 4, 2026</div>
+        <div class="tl-title">"The genesis of this with the Bill Evans Park project"</div>
+        <div class="tl-meta">During a discussion on revising the subdivision ordinance, a speaker noted the city was removing opportunities for the Planning Commission to review work on public land — pointing to Bill Evans Park as an originating example.</div>
+      </div>
+
+      <div class="tl-event huge blood">
+        <div class="tl-date">May 13, 2026 · 11:54 p.m.</div>
+        <div class="tl-title">1 more acre · same buyer · up to $110,000</div>
+        <div class="tl-meta">After exiting executive session at 11:44 p.m., the council passed two back-to-back motions. <strong>Motion 1 (City Council, 11:48 p.m.):</strong> Deed the 1-acre expansion area at the Creed development site at Bill Badgett Stadium to the College Park Redevelopment Agency. Moved by Gay, <strong>seconded by McKenzie.</strong> Unanimous. <strong>Motion 2 (Redevelopment Authority, 11:54 p.m.):</strong> Sell that acre to Creed Development for up to $110,000. Moved by Gay, <strong>seconded by McKenzie.</strong> Unanimous. Meeting adjourned at 11:55 p.m. — same Council→Authority→Creed pattern as Feb/May 2024.</div>
+        <span class="tl-tag blood">11:54 p.m.</span>
+        <span class="tl-tag blood">McKenzie seconded both</span>
+        <span class="tl-tag blood">52% per-acre price drop</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== A QUESTION FOR THE NEXT CHAPTER ============== -->
+<section class="chap" style="background: linear-gradient(180deg, var(--ink-2) 0%, var(--ink) 100%); padding: 90px 0;">
+  <div class="narrow">
+
+    <div style="display:inline-flex; align-items:center; gap:10px; background:rgba(212,168,87,0.14); color:var(--gold); padding:8px 16px; border:1px solid rgba(212,168,87,0.45); font-family:Manrope; font-weight:900; font-size:11px; text-transform:uppercase; letter-spacing:0.2em; margin-bottom: 24px;">
+      One more thing to notice · before the next chapter
+    </div>
+
+    <h2 class="chap-headline" style="margin-bottom: 28px;">
+      The apartments are going up <span style="color:var(--gold);">right next door to a track</span> that's been used for decades.
+    </h2>
+
+    <div class="chap-body">
+      <p style="font-size: 1.1rem; line-height: 1.65;">
+        Bill Badgett Stadium — the site where last night's additional acre was deeded to Creed — sits adjacent to property owned by <strong>Rex and Subrenia Willis</strong>, at <span class="mono" style="color:var(--gold);">1927 John Calvin Avenue</span>. For more than twenty years, the Willises have run <strong>Favor House</strong>: a food-distribution nonprofit and a youth track program called the <strong>Georgia Favor Track Club</strong>. Their track club's annual <em>"Spring into Favor Track and Field Classic"</em> is held, every year, at Bill Badgett Stadium. The track is, in effect, theirs to operate.
+      </p>
+      <p style="font-size: 1.05rem;">
+        On <span class="gold">August 5, 2024</span>, longtime resident <strong>Althea Morris</strong> told the council on the record what the apartment buildout would actually mean:
+      </p>
+    </div>
+
+    <div class="pullquote">
+      <div class="mark">"</div>
+      <div class="text">If you build those apartments the way that they say that you're looking to build them &hellip; it's going to bring those apartments right up to the front door of the fields, the track and field.</div>
+      <div class="attr">— Althea Morris, public comment · August 5, 2024</div>
+    </div>
+
+    <div class="chap-body">
+      <p style="font-size: 1.05rem;">
+        You would expect the family that runs a track program at Bill Badgett Stadium — a family that has spent two decades publicly advocating for youth recreation and green space in College Park — to be among the loudest voices opposing apartment buildings that will sit at the front door of their track. You would expect a statement, a public comment, a letter to the council.
+      </p>
+      <p style="font-size: 1.05rem;">
+        That hasn't happened. Across the entire two-year record reviewed for this story, neither Rex nor Subrenia Willis has spoken publicly in opposition to the Creed development. They have spoken many times in those meetings — defending their service, defending their family, defending council members — but not against this. Subrenia Willis was on the BIDA board, and later chaired it, during the period when BIDA conveyed Bill Evans Field to Creed.
+      </p>
+      <p style="font-size: 1.05rem;">
+        Another Ward 1 resident, <strong>Sherry Godfrey</strong>, asked the question directly at the <span class="gold">February 3, 2025</span> meeting:
+      </p>
+    </div>
+
+    <div class="pullquote" style="border-left-color: var(--gold);">
+      <div class="mark">"</div>
+      <div class="text">As Ms. Willis sits as the chair of BIDA you need to think about your taking away or supporting taking away green space from the children that you serve in Ward I &hellip; I don't see how you don't think about that with the legacy that you have in your track program.</div>
+      <div class="attr">— Sherry Godfrey, public comment · February 3, 2025</div>
+    </div>
+
+    <div class="chap-body">
+      <p style="font-size: 1.05rem;">
+        That's a fair question, and it deserves a fair answer. Why has a family that runs a youth track program at Bill Badgett Stadium not opposed an apartment complex going up next door to their track? Why has the BIDA chair — whose board approved the original Bill Evans transfer — not weighed in publicly when the same development reaches further into the same complex?
+      </p>
+      <p style="font-size: 1rem; color: var(--muted); font-style: italic; margin-top: 24px;">
+        We're not going to answer that here. The next piece in this series will take that question seriously — what the public record shows about the Willis family, Favor House, their relationship to the city's contracting and grant-making, and the question Sherry Godfrey asked on the record. For now, hold the question.
+      </p>
+    </div>
+
+    <div style="margin-top: 40px; font-family: Manrope; font-weight: 900; font-size: 12px; color: var(--gold); text-transform: uppercase; letter-spacing: 0.24em;">
+      Part two · coming soon
+    </div>
+
+  </div>
+</section>
+
+<!-- ============== FOOTER ============== -->
+<footer class="bottom">
+  <div class="narrow">
+    <div class="meta">Sources · Public Record</div>
+    <div class="src">
+      Every fact on this page is sourced to the official meeting minutes of the City of College Park Regular Sessions, dated as cited, plus reported sources noted below. These records are public, available through the City Clerk's office, and obtainable by any resident through the Georgia Open Records Act. The BIDA vote scorecard and the "3 Strikes" framing are courtesy of <a href="#" style="color:var(--gold);">United College Park</a>. The Atlanta Journal-Constitution editorial of June 19, 2024 and the WSB-TV report of the same period are both publicly available. No allegations are made beyond what these documents establish. Specific sources used in this story:
+      <br><br>
+      <strong>Jan 16, 2024</strong> · $319K FCAC improvements approval · <strong>Feb 19, 2024</strong> · Executive Session + quitclaim directive · <strong>Mar 4, 2024</strong> · Coleman public comment · <strong>Apr 15, 2024</strong> · Mose James IV public comment · <strong>May 6, 2024</strong> · Quitclaim execution + Phillips Park MOU · <strong>Aug 19, 2024</strong> · McGouirk Public Trust Doctrine challenge + Coleman $0.96/sq ft disclosure · <strong>Jan 21, 2025</strong> · MGBA + Morehouse alternative plan · <strong>Apr 7, 2025</strong> · Gay dismissal + McKenzie federal-protection note · <strong>Sep 2, 2025</strong> · Phillips Park paving authorization · <strong>Oct 6, 2025</strong> · Terry Jackson finance update · <strong>Jan 20 + Mar 2, 2026</strong> · Gay closing-pressure quotes · <strong>May 4, 2026</strong> · Planning Commission removal reference · <strong>May 13, 2026</strong> · New 1-acre sale to Creed at $101,000 (community report).
+    </div>
+    <div class="closing">
+      You don't dispose of a public park in an executive session. You don't do it twice. You don't do it at 11:54 p.m. on the way out the door for the summer. That's not how this should end.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
